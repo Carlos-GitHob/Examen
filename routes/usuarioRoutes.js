@@ -22,10 +22,11 @@ router.put("/:id_usuario",
         body("email").optional().isEmail().withMessage("Email valido es requerido"),
         body("edad").optional().isInt({min : 0}).withMessage("Edad tiene que ser positivo"),
     ]),
+    usuarioController.updateUsuario
 );
 
-router.delete("/:id_usuario",
-    validateRequest([param("id_usuario").isInt().withMessage("El ID debe ser un numero entero"),]),
+router.delete("/:id",
+    validateRequest([param("id").isInt().withMessage("El ID debe ser un numero entero"),]),
     usuarioController.deleteUsuario
 );
 

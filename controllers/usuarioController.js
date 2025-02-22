@@ -11,7 +11,7 @@ exports.createUsuario = async (req,res) => {
 };
 
 exports.updateUsuario = async (req, res) => {
-    const usuarioUpdated = await usuariosService.update(req.params.id, req.body);
+    const usuarioUpdated = await usuariosService.update(req.params.id_usuario, req.body);
     if(!usuarioUpdated){
         return res.status(404).json({message: "Usuario no encontrado"});
     }
