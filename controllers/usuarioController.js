@@ -6,7 +6,7 @@ exports.getAllUsuarios = async (req, res) => {
 };
 
 exports.createUsuario = async (req,res) => {
-    const usuario = await usuariosService.create(res.body);
+    const usuario = await usuariosService.create(req.body);
     res.status(200).json(usuario);
 };
 
